@@ -1,7 +1,7 @@
 {
     "name": "jaxon-php/jaxon-armada",
     "type": "library",
-    "description": "",
+    "description": "Advanced features for the Jaxon library",
     "authors": [
         {"name": "Thierry Feuzeu"}
     ],
@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Jaxon\\Sentry\\": "src/"
+            "Jaxon\\Armada\\": "src/"
         }
     }
 }

@@ -1,2 +1,2 @@
 # jaxon-armada
-Add framework like features to the Jaxon library
+Advanced features for the Jaxon library
