@@ -65,11 +65,6 @@ class Armada
 
         $sentry = jaxon()->sentry();
 
-        // Add the view renderer
-        $sentry->addViewRenderer('jaxon', function(){
-            return new View();
-        });
-
         // Set the session manager
         $sentry->setSessionManager(function(){
             return new Session();
