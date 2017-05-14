@@ -5,13 +5,41 @@ namespace Jaxon\Armada;
 class Session
 {
     /**
+     * The session manager implementation
+     * 
+     * It is provided by the aura/session package https://packagist.org/packages/aura/session
+     * 
+     * @var \Aura\Session\Session
+     */
+    protected $xSession = null;
+
+    /**
+     * The session manager implementation
+     * 
+     * It is provided by the aura/session package https://packagist.org/packages/aura/session
+     * 
+     * @var \Aura\Session\Session
+     */
+    protected $xSegment = null;
+
+    /**
+     * The constructor
+     */
+    public function __construct()
+    {
+        $xSessionFactory = new \Aura\Session\SessionFactory;
+        $this->xSession = $xSessionFactory->newInstance($_COOKIE);
+        $this->xSegment = $this->xSession->getSegment(get_class($this));
+    }
+
+    /**
      * Get the current session id
      * 
      * @return string           The session id
      */
     public function getId()
     {
-        return session_id();
+        return $this->xSession->getId();
     }
 
     /**
@@ -23,7 +51,21 @@ class Session
      */
     public function newId($bDeleteData = false)
     {
-        session_regenerate_id($bDeleteData);
+        if($bDeleteData)
+        {
+            $this->clear();
+        }
+        $this->xSession->regenerateId();
+    }
+
+    /**
+     * Start the session
+     * 
+     * @return void
+     */
+    public function start()
+    {
+        $this->xSession->start();
     }
 
     /**
@@ -36,7 +78,7 @@ class Session
      */
     public function set($sKey, $xValue)
     {
-        $_SESSION[$sKey] = $xValue;
+        $this->xSegment->set($sKey, $xValue);
     }
 
     /**
@@ -48,7 +90,7 @@ class Session
      */
     public function has($sKey)
     {
-        return key_exists($sKey, $_SESSION);
+        return key_exists($sKey, $_SESSION[get_class($this)]);
     }
 
     /**
@@ -61,7 +103,7 @@ class Session
      */
     public function get($sKey, $xDefault = null)
     {
-        return $this->has($sKey) ? $_SESSION[$sKey] : $xDefault;
+        return $this->xSegment->get($sKey, $xDefault);
     }
 
     /**
@@ -71,7 +113,7 @@ class Session
      */
     public function all()
     {
-        return $_SESSION;
+        return $_SESSION[get_class($this)];
     }
 
     /**
@@ -83,9 +125,9 @@ class Session
      */
     public function delete($sKey)
     {
-        if(key_exists($sKey, $_SESSION))
+        if($this->has($sKey))
         {
-            unset($_SESSION[$sKey]);
+            unset($_SESSION[get_class($this)][$sKey]);
         }
     }
 
@@ -96,6 +138,16 @@ class Session
      */
     public function clear()
     {
-        $_SESSION = [];
+        $this->xSession->clear();
+    }
+
+    /**
+     * Delete all data in the session
+     * 
+     * @return void
+     */
+    public function destroy()
+    {
+        $this->xSession->destroy();
     }
 }

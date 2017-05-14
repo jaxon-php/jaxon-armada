@@ -6,6 +6,11 @@ class Armada
 {
     use \Jaxon\Sentry\Traits\Armada;
 
+    /**
+     * The config file path
+     * 
+     * @var string
+     */
     protected $sConfigFile = '';
 
     /**
