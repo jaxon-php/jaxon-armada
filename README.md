@@ -25,9 +25,9 @@ Both implement a fluent interface which transform a call to a method into a requ
 Documentation
 -------------
 
-The Armada documentation is available in [English](http://www.jaxon-php.org/en/docs/armada/operation.html?target=_blank) and [French](http://www.jaxon-php.org/fr/docs/armada/operation.html?target=_blank).
+The Armada documentation is available in [English](http://www.jaxon-php.org/en/docs/armada/operation.html) and [French](http://www.jaxon-php.org/fr/docs/armada/operation.html).
 
-Some sample codes are provided in the [jaxon-php/jaxon-examples](https://github.com/jaxon-php/jaxon-examples?target=_blank) package, and demonstrated in [the website](http://www.jaxon-php.org/examples/advanced/armada.html?target=_blank).
+Some sample codes are provided in the [jaxon-php/jaxon-examples](https://github.com/jaxon-php/jaxon-examples) package, and demonstrated in [the website](http://www.jaxon-php.org/examples/advanced/armada.html).
 
 Contribute
 ----------
