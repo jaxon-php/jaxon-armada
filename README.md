@@ -13,7 +13,7 @@ The Jaxon classes in an Armada-based applications inherit from `\Jaxon\Sentry\Cl
 #### Views and sessions
 
 Armada provides a common API for views, that can be used with various template engines: Smarty, Twig, Blade and Dwoo, among others.
-Armada also provides a simple API for storing and retrieving data from user session.
+Armada also provides a simple API for storing and retrieving data from user sessions.
 
 The views and sessions APIs in Armada are the same as in framework integration packages. 
 
@@ -25,9 +25,9 @@ Both implement a fluent interface which transform a call to a method into a requ
 Documentation
 -------------
 
-The Armada documentation is available in [English](http://www.jaxon-php.org/en/docs/armada/operation.html) and [French](http://www.jaxon-php.org/fr/docs/armada/operation.html).
+The Armada documentation is available in [English](http://www.jaxon-php.org/en/docs/armada/operation.html?target=_blank) and [French](http://www.jaxon-php.org/fr/docs/armada/operation.html?target=_blank).
 
-Some sample codes are provided in the [jaxon-php/jaxon-examples](https://github.com/jaxon-php/jaxon-examples) package, and demonstrated in [the website](http://www.jaxon-php.org/examples/advanced/armada.html).
+Some sample codes are provided in the [jaxon-php/jaxon-examples](https://github.com/jaxon-php/jaxon-examples?target=_blank) package, and demonstrated in [the website](http://www.jaxon-php.org/examples/advanced/armada.html?target=_blank).
 
 Contribute
 ----------
