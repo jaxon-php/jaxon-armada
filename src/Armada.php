@@ -22,33 +22,6 @@ class Armada
     {}
 
     /**
-     * Read and set Jaxon options from a config file
-     *
-     * @return array
-     */
-    protected function readConfig()
-    {
-        $sExt = pathinfo($this->sConfigFile, PATHINFO_EXTENSION);
-        switch($sExt)
-        {
-        case 'php':
-            return \Jaxon\Config\Php::read($this->sConfigFile, 'lib', 'app');
-            break;
-        case 'yaml':
-        case 'yml':
-            return \Jaxon\Config\Yaml::read($this->sConfigFile, 'lib', 'app');
-            break;
-        case 'json':
-            return \Jaxon\Config\Json::read($this->sConfigFile, 'lib', 'app');
-            break;
-        default:
-            $msg = jaxon_trans('config.errors.file.extension', array('path' => $this->sConfigFile));
-            throw new \Jaxon\Exception\Config\File($msg);
-            break;
-        }
-    }
-
-    /**
      * Set the config file path.
      *
      * @return void
@@ -65,10 +38,11 @@ class Armada
      */
     protected function jaxonSetup()
     {
-        // Read config file
-        $this->appConfig = $this->readConfig();
+        $jaxon = jaxon();
+        $sentry = $jaxon->sentry();
 
-        $sentry = jaxon()->sentry();
+        // Read config file
+        $this->appConfig = $jaxon->readConfigFile($this->sConfigFile, 'lib', 'app');
 
         // Set the session manager
         $sentry->setSessionManager(function(){
