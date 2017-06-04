@@ -8,7 +8,7 @@ This package provides advanced features for the Jaxon-based applications.
 
 #### Base class for applications
 
-The Jaxon classes in an Armada-based applications inherit from `\Jaxon\Sentry\Classes\Armada`, which provides them with functions to handle responses, views, sessions, requests and pagination.
+The Jaxon classes in an Armada-based applications inherit from `\Jaxon\Sentry\Armada`, which provides them with functions to handle responses, views, sessions, requests and pagination.
 
 #### Views and sessions
 
