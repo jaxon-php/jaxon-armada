@@ -8,7 +8,7 @@ class Armada
 
     /**
      * The config file path
-     * 
+     *
      * @var string
      */
     protected $sConfigFile = '';
@@ -45,7 +45,7 @@ class Armada
         $this->appConfig = $jaxon->readConfigFile($this->sConfigFile, 'lib', 'app');
 
         // Set the session manager
-        $sentry->setSessionManager(function(){
+        $sentry->setSessionManager(function () {
             return new Session();
         });
     }
