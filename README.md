@@ -4,7 +4,7 @@ Jaxon Armada
 Jaxon is an open source PHP library for easily creating Ajax web applications.
 It allows into a web page to make direct Ajax calls to PHP classes that will in turn update its content, without reloading the entire page.
 
-This package provides advanced features for the Jaxon-based applications.
+This package provides advanced features for Jaxon-based applications.
 
 #### Base class for applications
 
@@ -12,14 +12,14 @@ The Jaxon classes in an Armada-based applications inherit from `\Jaxon\Sentry\Ar
 
 #### Views and sessions
 
-Armada provides a common API for views, that can be used with various template engines: Smarty, Twig, Blade and Dwoo, among others.
-Armada also provides a simple API for storing and retrieving data from user sessions.
+Armada provides a [common API for views](https://www.jaxon-php.org/docs/armada/views.html), that can be used with various template engines: Smarty, Twig, Blade and Dwoo, among others.
+Armada also provides a simple API for storing and retrieving data from [user sessions](https://www.jaxon-php.org/docs/armada/sessions.html).
 
 The views and sessions APIs in Armada are the same as in framework integration packages. 
 
 #### Request and Paginator factories
 
-The Request and Paginator factories create a request (resp. a list of requests) to a method in a Jaxon class.
+The [Request and Paginator factories](https://www.jaxon-php.org/docs/armada/classes.html) create a request (resp. a list of requests) to a method in a Jaxon class.
 Both implement a fluent interface which transform a call to a method into a request to the same method in the linked class.
 
 Documentation
