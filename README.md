@@ -6,9 +6,7 @@ It allows into a web page to make direct Ajax calls to PHP classes that will in 
 
 This package provides advanced features for Jaxon-based applications.
 
-#### Base class for applications
-
-The Jaxon classes in an Armada-based applications inherit from `\Jaxon\Sentry\Armada`, which provides them with functions to handle responses, views, sessions, requests and pagination.
+The [Jaxon classes](https://www.jaxon-php.org/docs/armada/classes.html) in an Armada-based application inherit from `\Jaxon\Sentry\Armada`, which provides them with functions to handle responses, views, sessions, requests and pagination.
 
 #### Views and sessions
 
