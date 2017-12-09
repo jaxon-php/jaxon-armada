@@ -19,6 +19,9 @@
     "autoload": {
         "psr-4": {
             "Jaxon\\Armada\\": "src/"
-        }
+        },
+        "files": [
+            "src/start.php"
+        ]
     }
 }

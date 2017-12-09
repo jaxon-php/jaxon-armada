@@ -29,6 +29,8 @@ class Armada
     public function config($sConfigFile)
     {
         $this->sConfigFile = $sConfigFile;
+        // Initialize the Jaxon plugin
+        $this->_jaxonSetup();
     }
 
     /**
